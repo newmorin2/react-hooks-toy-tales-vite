@@ -12,7 +12,7 @@ Who doesn't love toys and tales
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
     - [Usage](#usage)
-    - [Testing](#testing)
+    - [Code preview](code-preview)
 - [Contributing](#contributing)
 
 
@@ -81,6 +81,10 @@ Run the project with:
 Run the test with:
 
 'npm test'
+
+###
+![alt text](images/Screenshot%20from%202026-05-13%2010-27-55.png)
+![alt text](images/Screenshot%20from%202026-05-13%2010-28-08.png)
 
 ## Contributing
 
