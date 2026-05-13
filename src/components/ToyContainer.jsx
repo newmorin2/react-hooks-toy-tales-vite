@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ToyCard from "./ToyCard";
 
-function ToyContainer({toys}) {
+function ToyContainer({toys, deleteToy}) {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {
@@ -13,7 +13,7 @@ function ToyContainer({toys}) {
   return (
     <div id="toy-collection">
       {toys.map((toy) => (
-        <ToyCard key={toy.id} toy={toy} />
+        <ToyCard key={toy.id} toy={toy} deleteToy={deleteToy} />
       ))}
     </div>
   );
