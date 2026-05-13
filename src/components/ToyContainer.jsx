@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ToyCard from "./ToyCard";
 
-function ToyContainer({toys, deleteToy, updateToy}) {
+function ToyContainer({deleteToy, updateToy}) {
   const [toys, setToys] = useState([]);
 
   useEffect(() => {

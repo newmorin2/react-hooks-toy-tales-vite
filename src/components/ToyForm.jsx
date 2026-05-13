@@ -36,7 +36,6 @@ function ToyForm({addToy}) {
         });
       });
   }
-}
   return (
     <div className="container">
       <form className="add-toy-form" onSubmit={handleSubmit}>
@@ -68,6 +67,7 @@ function ToyForm({addToy}) {
       </form>
     </div>
   );
+}
 
 
 export default ToyForm;

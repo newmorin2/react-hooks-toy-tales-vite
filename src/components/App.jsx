@@ -18,19 +18,21 @@ function App() {
     setShowForm((showForm) => !showForm);
   }
   function addToy(newToy) {
-    setToys([...toys, newToy]);
+    setToys((prevToys) => [...prevToys, newToy]);
   }
   function deleteToy(id) {
-  const updatedToys = toys.filter((toy) => toy.id !== id);
-  setToys(updatedToys);
+  setToys((prevToys) =>
+    prevToys.filter((toy) => toy.id !== id)
+  );
   }
   function updateToy(updatedToy) {
-  const updatedToys = toys.map((toy) =>
-    toy.id === updatedToy.id ? updatedToy : toy
+  setToys((prevToys) =>
+    prevToys.map((toy) =>
+      toy.id === updatedToy.id ? updatedToy : toy
+    )
   );
+}
 
-  setToys(updatedToys); 
-  }
 
   return (
     <>
