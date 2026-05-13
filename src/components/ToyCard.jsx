@@ -7,7 +7,6 @@ function ToyCard({toy, deleteToy, updateToy}) {
     }).then(() => deleteToy(toy.id));
   }
   function handleLike() {
-    const updatedLikes = toy.likes + 1;
 
     fetch(`http://localhost:3001/toys/${toy.id}`, {
       method: "PATCH",
@@ -15,7 +14,7 @@ function ToyCard({toy, deleteToy, updateToy}) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        likes: updatedLikes,
+        likes: toy.likes + 1,
       }),
     })
       .then((res) => res.json())
