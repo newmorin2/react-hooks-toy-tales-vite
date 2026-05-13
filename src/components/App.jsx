@@ -24,6 +24,13 @@ function App() {
   const updatedToys = toys.filter((toy) => toy.id !== id);
   setToys(updatedToys);
   }
+  function updateToy(updatedToy) {
+  const updatedToys = toys.map((toy) =>
+    toy.id === updatedToy.id ? updatedToy : toy
+  );
+
+  setToys(updatedToys); 
+  }
 
   return (
     <>
@@ -32,7 +39,7 @@ function App() {
       <div className="buttonContainer">
         <button onClick={handleClick}>Add a Toy</button>
       </div>
-      <ToyContainer toys={toys} deleteToy={deleteToy} />
+      <ToyContainer toys={toys} deleteToy={deleteToy} updateToy={updateToy} />
     </>
   );
 }
