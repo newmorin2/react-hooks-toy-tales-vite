@@ -7,21 +7,20 @@ function ToyCard({toy, deleteToy, updateToy}) {
     }).then(() => deleteToy(toy.id));
   }
   function handleLike() {
-
-    fetch(`http://localhost:3001/toys/${toy.id}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        likes: toy.likes + 1,
-      }),
-    })
-      .then((res) => res.json())
-      .then((updatedToy) => {
-        updateToy(updatedToy);
-      });
-  }
+  fetch(`http://localhost:3001/toys/${toy.id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      likes: toy.likes + 1,
+    }),
+  })
+    .then((res) => res.json())
+    .then((updatedToy) => {
+      updateToy(updatedToy);
+    });
+}
 
   return (
     <div className="card" data-testid="toy-card">
@@ -32,7 +31,8 @@ function ToyCard({toy, deleteToy, updateToy}) {
         className="toy-avatar"
       />
       <p>{toy.likes} Likes </p>
-      <button className="like-btn" onClick={handleLike}>Like {"<3"}</button>
+      <button className="like-btn" onClick={handleLike}>
+        Like {"<3"}</button>
       <button className="del-btn" onClick={handleDelete}>Donate to GoodWill</button>
     </div>
   );
