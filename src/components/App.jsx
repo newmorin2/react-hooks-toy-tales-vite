@@ -21,13 +21,13 @@ function App() {
     setToys((prevToys) => [...prevToys, newToy]);
   }
   function deleteToy(id) {
-  setToys((prevToys) =>
+  setToys((prev) =>
     prevToys.filter((toy) => toy.id !== id)
   );
   }
   function updateToy(updatedToy) {
-  setToys((prevToys) =>
-    prevToys.map((toy) =>
+  setToys((prev) =>
+    prev.map((toy) =>
       toy.id === updatedToy.id ? updatedToy : toy
     )
   );
